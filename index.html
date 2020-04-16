@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="filter.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+    <!-- Multifilter with slider and checkboxes -->
+<div class="filterContainer">
+  <p class="amountTitle">Lånebelopp</p>
+  <span id="amount">50</span><span class="kr">kr</span>
+  <input type="range" min="1000" max="50000" step="1000" value="5000" class="slider" id="loanAmount">
+    
+  <p class="checkboxHidden">
+    <label class="labelContainer" style="margin-top: 40px;">Hidden
+      <input type="checkbox" checked id="hidden" class="checkboxHidden" onclick="filterIt()">
+      <span class="checkmark"></span>
+    </label>
+  </p>
+  <p class="checkboxP">
+      <label class="labelContainer" style="margin-top: 40px;">Låna med BankID
+        <input type="checkbox" id="bankid" onclick="filterIt()">
+        <span class="checkmark"></span>
+      </label>
+    </p><p class="checkboxP">
+      <label class="labelContainer">Snabb utbetalning
+    <input type="checkbox" id="snabb"  onclick="filterIt()">
+    <span class="checkmark"></span>
+      </label>
+    </p><p class="checkboxP">
+      <label class="labelContainer">Låna utan UC
+    <input type="checkbox" id="utanUC" onclick="filterIt()">
+    <span class="checkmark"></span>
+  </label>
+    </p><p class="checkboxP">
+      <label class="labelContainer">Låna med betalningsanmärkningar
+    <input type="checkbox" id="anmarkningar" onclick="filterIt()">
+    <span class="checkmark"></span>
+  </label>
+    </p>
+  </div>
+  
+  <!-- The filterable divs. The filter is based on the classes -->
+  <div class="container">
+    <div class="filterDiv bankid snabb hidden">Företag 1<span class="filterAmount">20000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Ansök med BankID</span> &#x2714;<span class="criteria">Snabb utbetalning</span></div>
+    </div>
+    <div class="filterDiv bankid snabb anmarkningar hidden">Företag 2<span class="filterAmount">15000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Ansök med BankID</span>&#x2714;<span class="criteria">Snabb utbetalning</span>&#x2714;<span class="criteria">Ansök med anmärkningar</span></div>
+    </div>
+    <div class="filterDiv bankid anmarkningar hidden">Företag 3<span class="filterAmount">20000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Ansök med BankID</span>&#x2714;<span class="criteria">Ansök med anmärkningar</span></div>
+    </div>
+    <div class="filterDiv snabb hidden">Företag 4<span class="filterAmount">25000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Ansök med BankID</span>&#x2714;<span class="criteria">Snabb utbetalning</span></div>
+    </div>
+    <div class="filterDiv snabb anmarkningar hidden">Företag 5<span class="filterAmount">40000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Snabb utbetalning</span>&#x2714;<span class="criteria">Ansök med anmärkningar</span></div>
+    </div>
+    <div class="filterDiv bankid snabb hidden">Företag 6<span class="filterAmount">50000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Ansök med BankID</span>&#x2714;<span class="criteria">Snabb utbetalning</span></div>
+    </div>
+    <div class="filterDiv snabb hidden">Företag 7<span class="filterAmount">30000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Snabb utbetalning</span></div>
+    </div>
+    <div class="filterDiv utanUC hidden">Företag 8<span class="filterAmount">40000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Låna utan UC</span></div>
+    </div>
+    <div class="filterDiv utanUC bankid anmarkningar hidden">Företag 9<span class="filterAmount">25000</span>
+      <span class="krGreen"> kr | Max belopp</span>
+      <div class="criteriaContainer">
+        &#x2714;<span class="criteria">Låna utan UC</span>&#x2714;<span class="criteria">Ansök med BankID</span>&#x2714;<span class="criteria">Ansök med anmärkningar</span></div>
+    </div>
+  </div>
+</body>
+</html>
